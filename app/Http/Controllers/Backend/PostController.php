@@ -60,6 +60,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        if($post->user_id != auth()->user()->id){
+            return redirect('/posts')->with('status', 'No tienes permiso de modificar un post que no es tuyo');
+        }
         return view('posts.edit', compact('post'));
     }
 
