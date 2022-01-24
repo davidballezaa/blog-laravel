@@ -23,6 +23,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Title</th>
+                                <th>User Name</th>
                                 <th colspan="2">&nbsp;</th>
                             </tr>
                         </thead>
@@ -31,6 +32,7 @@
                                 <tr>
                                     <td>{{$post->id}}</td>
                                     <td>{{$post->title}}</td>
+                                    <td>{{$post->user->name}}</td>
                                     <td>
                                         <a href="{{route('posts.edit', $post)}}" class="btn btn-sm btn-info">Edit</a>
                                     </td>
