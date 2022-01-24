@@ -99,6 +99,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if($post->user_id != auth()->user()->id){
+            return redirect('/posts')->with('status', 'No tienes permiso de eliminar un post que no es tuyo');
+        }
+
         Storage::disk('public')->delete($post->image);
         $post->delete();
 
