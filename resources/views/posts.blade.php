@@ -7,7 +7,7 @@
             @foreach($posts as $post)
                 <div class="card border border-2 mb-3">
                     @if ($post->image)
-                        <img src="{{$post->get_image}}" class="card-img-top img-fluid" style="aspect-ratio: 4 / 3;">
+                        <img src="{{$post->get_image}}" class="card-img-top img-fluid" style="aspect-ratio: 16 / 9;">
                     @elseif ($post->iframe)
                         <div class="embed-responsive embed-responsive-16by9">
                             {!!$post->iframe!!} 
