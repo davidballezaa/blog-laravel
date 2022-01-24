@@ -40,7 +40,7 @@ class Post extends Model
 
     public function getGetExcerptAttribute()
     {
-        return substr($this->body, 0, 140);
+        return substr($this->body, 0, 20);
     }
 
     public function getGetImageAttribute()
